@@ -1,4 +1,4 @@
-<%- layout("/layouts/boilerplate.ejs")  %>
+<!-- <%- layout("/layouts/boilerplate.ejs")  %>
 
 <div class="row mt-3">
     <h1 class="col-6 offset-3">Login</h1>
@@ -18,6 +18,34 @@
                 <div class="invalid-feedback">
                     Please Enter password.
                   </div>
+            </div>
+
+            <button class="btn btn-dark">Login</button>
+        </form>
+    </div>
+</div> -->
+
+
+<%- layout("/layouts/boilerplate.ejs")  %>
+
+<div class="row mt-3">
+    <h1 class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1">Login</h1>
+    <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+        <form method="POST" action="/login" class="needs-validation mb-3" novalidate>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input id="username" class="form-control" type="text" name="username" placeholder="Enter username" required>
+                <div class="invalid-feedback">
+                    Please Enter username.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input id="password" class="form-control" type="password" name="password" placeholder="Enter password" required>
+                <div class="invalid-feedback">
+                    Please Enter password.
+                </div>
             </div>
 
             <button class="btn btn-dark">Login</button>

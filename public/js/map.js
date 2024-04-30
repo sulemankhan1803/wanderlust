@@ -1,6 +1,6 @@
 
 mapboxgl.accessToken = mapToken;
-console.log(mapToken);
+// console.log(mapToken);
 
 const map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/streets-v12',
@@ -9,7 +9,7 @@ const map = new mapboxgl.Map({
     zoom: 9 // starting zoom
 });
 
-console.log(listing.geometry.coordinates);
+// console.log(listing.geometry.coordinates);
 
 const marker1 = new mapboxgl.Marker({ color: "red" })
     .setLngLat(listing.geometry.coordinates)

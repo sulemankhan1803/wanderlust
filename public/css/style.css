@@ -1,3 +1,8 @@
+/* hiding scroll bar */
+body::-webkit-scrollbar{
+    display: none;
+}
+
 body {
     font-family: 'Plus Jakarta Sans', sans-serif !important;
     display: flex;
@@ -107,8 +112,9 @@ body {
 
 /* Show Page */
 .show-img {
-    /* height: 30vh; */
-    height: 60vh;
+    /* height: 40vh; */
+    height: 22rem;
+
 }
 
 .btns {
@@ -124,7 +130,7 @@ body {
 
 #map {
     height: 400px;
-    width: 80vh;
+    width: 100%;
 }
 
 /* Navbar search */
@@ -165,10 +171,20 @@ body {
     align-items: center;
 }
 
+.icons-container{
+    display: flex;
+    align-items: center;
+    width: 72%;
+}
 .icons{
     display: flex;
-    overflow-x: hidden;
-    width: 72%;
+    /* align-items: center; */
+    overflow-x: scroll;
+    /* width: 72%; */
+}
+
+.icons::-webkit-scrollbar{
+    display: none;
 }
 
 .filter {
@@ -192,16 +208,17 @@ body {
 }
 
 .tax-toggle {
-    border: 1px solid black;
+    border: 1px solid rgb(192, 184, 184);
     border-radius: 1rem;
     height: 3.25rem;
-    width: 16rem; 
-    width: 300px;
+    /* width: 16rem;  */
     padding: 1rem;
     margin-left: 3rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     /* flex: 1;  */
+    /* box-sizing: content-box; */
 
 }
 .fa-chevron-left {
@@ -211,4 +228,55 @@ body {
 .fa-chevron-right{
     margin-left: 10px;
     cursor: pointer;
+}
+
+@media screen and (max-width:1200px) {
+    .icons-container{
+        width: 65%;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .icons-container{
+        width: 55%;
+    }
+}
+
+@media screen and (max-width:766px) {
+    #filters{
+        flex-wrap: wrap;
+    }
+    .icons-container{
+        width: 100%;
+    }
+    .tax-toggle {
+        text-align: center;
+        margin-left: 0;
+        width: 100%;
+        
+    }
+}
+
+/* Show image */
+@media (max-width: 992px) {
+    .show-img {
+        height: 20rem; 
+    }
+}
+@media (max-width: 766px) {
+    .show-img {
+        height: 18rem; 
+    }
+}
+
+@media (max-width: 576px) {
+    .show-img {
+        height: 15rem; 
+    }
+}
+
+@media (max-width: 376px) {
+    .show-img {
+        height: 13rem; 
+    }
 }
