@@ -31,11 +31,25 @@ module.exports.showListing = async (req, res) => {
 
 module.exports.createListing = async (req, res, next) => {
 
-    let response = await geocodingClient.forwardGeocode({
-        query: req.body.listing.location,
-        limit: 1
-      })
-        .send()
+    // let response = await geocodingClient.forwardGeocode({
+    //     query: req.body.listing.location,
+    //     limit: 1
+    //   })
+    //     .send()
+
+    // Using dummy coordinates [lng, lat] because the Mapbox token is currently invalid
+    const response = {
+        body: {
+            features: [
+                {
+                    geometry: {
+                        type: "Point",
+                        coordinates: [77.5946, 12.9716] // [lng, lat] → Example: Bangalore
+                    }
+                }
+            ]
+        }
+    };
 
     let url = req.file.path;
     let filename = req.file.filename;
@@ -43,7 +57,7 @@ module.exports.createListing = async (req, res, next) => {
     const newListing = new Listing(req.body.listing);
     newListing.owner = req.user._id;
     newListing.image = { url, filename }
-    
+
     newListing.geometry = response.body.features[0].geometry;
 
     await newListing.save();
@@ -61,7 +75,7 @@ module.exports.renderEditForm = async (req, res) => {
 
     let originalImageUrl = listing.image.url;
     originalImageUrl = originalImageUrl.replace("/upload", "/upload/w_250")
-    res.render("./listings/edit.ejs", { listing,originalImageUrl });
+    res.render("./listings/edit.ejs", { listing, originalImageUrl });
 };
 
 module.exports.updateListing = async (req, res) => {
