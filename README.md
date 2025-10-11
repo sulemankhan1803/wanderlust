@@ -71,7 +71,7 @@ node app.js
 
 or (for auto-restart on save)
 ```bash
-npx nodemon app.js
+nodemon app.js
 ```
 
 Visit:
