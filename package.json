@@ -13,6 +13,7 @@
     "node": ">=24.0.0"
   },
   "dependencies": {
+    "@fluidjs/multer-cloudinary": "^1.0.4",
     "@mapbox/mapbox-sdk": "^0.15.3",
     "cloudinary": "^2.7.0",
     "connect-flash": "^0.1.1",
@@ -26,8 +27,7 @@
     "joi": "^17.12.1",
     "method-override": "^3.0.0",
     "mongoose": "^8.1.1",
-    "multer": "^1.4.5-lts.1",
-    "@fluidjs/multer-cloudinary": "^1.0.4",
+    "multer": "^2.0.2",
     "npm": "^11.5.1",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
