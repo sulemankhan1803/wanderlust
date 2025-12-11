@@ -100,7 +100,7 @@ app.use("/", userRouter);
 
 // Page not found middleare
 app.all("*", (req, res, next) => {
-    next(new ExpressError(404, "Paage not found"))
+    next(new ExpressError(404, "Page not found"))
 })
 
 // Error handling middleware
